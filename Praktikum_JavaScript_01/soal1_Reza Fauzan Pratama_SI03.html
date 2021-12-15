@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Lingkaran</title>
+
+    <style>
+        #hasil {
+            font-size: 50px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Luas & Keliling Lingkaran</legend>
+
+        <div style="display: flex;">
+
+            <div style="margin-left: 40px;">
+                <p>Masukkan Angka </p>
+                <input type="number" id="angka">
+                <br><br>
+                <button id="luas" onclick="luasLingkaran()">Hitung Luas Lingkaran</button>
+                <br><br>
+                <button id="keliling" onclick="kelilingLingkaran()">Hitung Keliling Lingkaran</button>
+            </div>
+    
+            <div id="hasil"></div>
+        </div>
+    </fieldset>
+
+
+    <script>
+        function luasLingkaran() {
+            const angkaMasukan = document.getElementById("angka").value;
+            document.getElementById("hasil").innerHTML = 3.14*angkaMasukan*angkaMasukan 
+        }
+
+        function kelilingLingkaran() {
+            const angkaMasukan = document.getElementById("angka").value;
+            document.getElementById("hasil").innerHTML = 2*3.14*angkaMasukan
+        }
+    </script>
+</body>
+</html>

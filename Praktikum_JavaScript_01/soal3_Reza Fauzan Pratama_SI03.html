@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Biaya Parkir</title>
+
+    <style>
+        table tr td{
+            border: 1px solid black;
+            width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>E-Karcis</legend>
+        <br>
+        <button onclick="perhitungan()">Jalankan</button>
+        <br><br>
+        <table>
+            <tr>
+                <td>Jam Masuk</td>
+                <td>Jam Keluar</td>
+                <td>Lama</td>
+                <td>Keluaran Biaya</td>
+            </tr>
+
+            <tr>
+                <td><input type="number" placeholder="Masukkan Angka" id="masuk"></td>
+                <td><input type="number" placeholder="Masukkan Angka" id="keluar"></td>
+                <td><div id="lama"></div></td>
+                <td><div id="biaya"></div></td>
+            </tr>
+        
+        </table>
+    </fieldset>
+
+    <script>
+
+        function perhitungan() {
+            const jamMasuk = document.getElementById("masuk").value;
+            const jamKeluar = document.getElementById("keluar").value;
+            const totalBiaya = 0;
+            const duaJamPertama = 3000;
+            const satuJamSelanjutnya = 1000;
+            const selisih = jamKeluar - jamMasuk;
+            document.getElementById("lama").innerHTML = jamKeluar - jamMasuk + " Jam"
+
+            if (jamKeluar - jamMasuk <= 2) {
+                document.getElementById("biaya").innerHTML = duaJamPertama + " Rupiah";
+            }
+
+            else {
+                const tambahanJam = selisih - 2;
+                document.getElementById("biaya").innerHTML = duaJamPertama + (satuJamSelanjutnya * tambahanJam) + " Jam";
+            }
+        }
+    </script>
+</body>
+</html>
